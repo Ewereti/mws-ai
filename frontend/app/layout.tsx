@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const sans = Inter({
   variable: "--font-sans",
-  subsets: ["latin", "cyrillic"],
-  display: "swap",
-});
-
-const heading = Playfair_Display({
-  variable: "--font-heading",
   subsets: ["latin", "cyrillic"],
   display: "swap",
 });
@@ -31,10 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="ru"
-      className={`${sans.variable} ${heading.variable} ${mono.variable} h-full antialiased`}
-    >
+    <html lang="ru" className={`${sans.variable} ${mono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );
