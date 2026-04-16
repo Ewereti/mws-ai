@@ -82,3 +82,9 @@ export function sendTaskUpdate(
     body: JSON.stringify(payload),
   });
 }
+
+export function deleteTask(taskId: string) {
+  return request<{ ok: boolean; deleted_id: string }>(`/tasks/${taskId}`, {
+    method: "DELETE",
+  });
+}
